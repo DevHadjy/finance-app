@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Efeito de brilho neon para textos */
+.text-glow {
+    text-shadow: 0 0 5px theme('colors.green.400'),
+                 0 0 10px theme('colors.green.500');
+}
+
+/* Efeito de brilho neon para cards e bordas */
+.card-glow {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2),
+                inset 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+/* Animação das barras inferiores */
+.animated-border {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    pointer-events: none; 
+}
+
+.animated-border .bar {
+    width: 15px;
+    margin: 0 5px;
+    background: theme('colors.green.500');
+    box-shadow: 0 0 5px theme('colors.green.400'),
+                0 0 10px theme('colors.green.500');
+    animation: wave 1.5s linear infinite;
+}
+
+@keyframes wave {
+    0% { height: 10px; }
+    50% { height: 50px; }
+    100% { height: 10px; }
+}
+
+/* Adiciona um atraso diferente para cada barra, criando o efeito de onda */
+.animated-border .bar:nth-child(2n) { animation-delay: 0.2s; }
+.animated-border .bar:nth-child(3n) { animation-delay: 0.5s; }
+.animated-border .bar:nth-child(4n) { animation-delay: 0.8s; }
+.animated-border .bar:nth-child(5n) { animation-delay: 1.1s; }

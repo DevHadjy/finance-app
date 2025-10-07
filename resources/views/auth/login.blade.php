@@ -33,7 +33,7 @@ body { margin:0; background:#0b0b0b; overflow:hidden; }
 
 <canvas id="chartCanvas" class="fixed inset-0 w-full h-full z-0"></canvas>
 
-<div class="neon-text">Finança & AI 🤖</div>
+<div class="neon-text">Finanças & AI 🤖</div>
 
 <div id="loginCard" class="absolute top-20 right-12 z-10 p-8 w-[400px] bg-black bg-opacity-80 rounded-xl shadow-xl login-card">
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -62,6 +62,16 @@ body { margin:0; background:#0b0b0b; overflow:hidden; }
             <x-primary-button class="ml-3">{{ __('Log in') }}</x-primary-button>
         </div>
     </form>
+
+    <div class="text-center mt-6">
+        <p class="text-sm text-gray-400">
+            Não tem uma conta?
+            <a class="font-semibold underline text-green-400 hover:text-green-300" href="{{ route('register') }}">
+                Registre-se
+            </a>
+        </p>
+    </div>
+
 </div>
 
 <script>
