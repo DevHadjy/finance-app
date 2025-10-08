@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('despesas', DespesaController::class)->except(['show']);
     Route::get('despesas/import', [DespesaController::class, 'importForm'])->name('despesas.importForm');
     Route::post('despesas/import', [DespesaController::class, 'import'])->name('despesas.import');
+    Route::post('/gpt/summary', [\App\Http\Controllers\SummaryController::class, 'summary'])->name('gpt.summary');
+    Route::post('/gpt/chat', [\App\Http\Controllers\ChatController::class, 'chat'])->name('gpt.chat');
 });
 
 require __DIR__.'/auth.php';
